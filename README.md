@@ -30,3 +30,7 @@ Rules are relaxed a bit:
 - no need to document one-liners
 - no need to document overrides and test methods
 - no need to provide full information for parameters, throws and return types
+
+## AvoidInlineConditionals
+
+Inline conditionals are permitted.

@@ -171,7 +171,9 @@ This file is based on sun_checks.xml with customizations marked with ***
 
         <!-- Checks for common coding problems               -->
         <!-- See http://checkstyle.sf.net/config_coding.html -->
+        <!-- *** permiting inline conditionals
         <module name="AvoidInlineConditionals"/>
+        -->
         <module name="EmptyStatement"/>
         <module name="EqualsHashCode"/>
         <module name="HiddenField">
