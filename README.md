@@ -20,3 +20,13 @@ Star import is allowed for:
 - java.lang.Math
 - org.junit.Assert
 - org.mockito.Mockito
+
+## JavadocMethod
+
+Rules are relaxed a bit:
+
+- no need to document private methods
+- no need to document property getters/setters
+- no need to document one-liners
+- no need to document overrides and test methods
+- no need to provide full information for parameters, throws and return types
