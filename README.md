@@ -8,3 +8,15 @@ Rules for checkstyle. Share rules among projects.
 # Overview
 
 The rules are based on the default Sun checks, with some modifications.
+
+## AvoidStarImport
+
+Star import is allowed for:
+
+- java.awt
+- java.io
+- java.util
+- javax.swing
+- java.lang.Math
+- org.junit.Assert
+- org.mockito.Mockito
