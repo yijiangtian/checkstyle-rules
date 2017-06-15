@@ -20,12 +20,12 @@ You can configure the maven-checkstyle-plugin in this way:
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>${maven.checkstyle.plugin.version}</version>
+                    <version>2.17</version>
                     <dependencies>
                         <dependency>
                             <groupId>com.github.ngeor</groupId>
                             <artifactId>checkstyle-rules</artifactId>
-                            <version>1.0.8</version>
+                            <version>1.0.16</version>
                         </dependency>
                     </dependencies>
                     <configuration>
@@ -222,7 +222,6 @@ Same as sun_checks:
 - [EqualsHashCode](http://checkstyle.sourceforge.net/config_coding.html#EqualsHashCode)
 - [IllegalInstantiation](http://checkstyle.sourceforge.net/config_coding.html#IllegalInstantiation)
 - [InnerAssignment](http://checkstyle.sourceforge.net/config_coding.html#InnerAssignment)
-- [MagicNumber](http://checkstyle.sourceforge.net/config_coding.html#MagicNumber)
 - [MissingSwitchDefault](http://checkstyle.sourceforge.net/config_coding.html#MissingSwitchDefault)
 - [SimplifyBooleanExpression](http://checkstyle.sourceforge.net/config_coding.html#SimplifyBooleanExpression)
 - [SimplifyBooleanReturn](http://checkstyle.sourceforge.net/config_coding.html#SimplifyBooleanReturn)
@@ -234,6 +233,10 @@ This rule is disabled, so it is permitted to write `int max = (x > y) ? x : y;`
 ### [HiddenField](http://checkstyle.sourceforge.net/config_coding.html#HiddenField)
 
 This rule is relaxed to permit hiding local fields within constructors and setters.
+
+### [MagicNumber](http://checkstyle.sourceforge.net/config_coding.html#MagicNumber)
+
+The rule is relaxed, allowing magic numbers in field declarations, annotations and the hashCode method.
 
 ### [CovariantEquals](http://checkstyle.sourceforge.net/config_coding.html#CovariantEquals)
 Checks that classes which define a covariant equals() method also override method equals(Object).
@@ -348,3 +351,20 @@ This rule is disabled in favor of the rule *ParameterAssignment*.
 
 ### [CommentsIndentation](http://checkstyle.sourceforge.net/config_misc.html#CommentsIndentation)
 Controls the indentation between comments and surrounding code. Comments are indented at the same level as the surrounding code.
+
+# Suppressions
+
+It is possible to specify an [XML file with supressions](http://checkstyle.sourceforge.net/config_filters.html#SuppressionFilter). The file is optional and it needs to be in `checkstyle/suppressions.xml`.
+
+Example file to ignore magic numbers and multiple string literals in unit tests:
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suppressions PUBLIC
+    "-//Puppy Crawl//DTD Suppressions 1.0//EN"
+    "http://checkstyle.sourceforge.net/dtds/suppressions_1_0.dtd">
+<suppressions>
+    <suppress files="Test.java$" checks="MagicNumber" />
+    <suppress files="Test.java$" checks="MultipleStringLiterals" />
+</suppressions>
+```

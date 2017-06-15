@@ -183,7 +183,11 @@ This file is based on sun_checks.xml with customizations marked with ***
         </module>
         <module name="IllegalInstantiation"/>
         <module name="InnerAssignment"/>
-        <module name="MagicNumber"/>
+        <module name="MagicNumber">
+            <property name="ignoreFieldDeclaration" value="true" /> <!-- *** ignore field declarations -->
+            <property name="ignoreAnnotation" value="true" /> <!-- *** ignore annotations -->
+            <property name="ignoreHashCodeMethod" value="true" /> <!-- *** ignore hashCode -->
+        </module>
         <module name="MissingSwitchDefault"/>
         <module name="NestedIfDepth"/> <!-- *** added if-depth check -->
         <module name="SimplifyBooleanExpression"/>
