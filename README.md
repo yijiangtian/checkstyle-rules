@@ -27,6 +27,11 @@ You can configure the maven-checkstyle-plugin in this way:
                             <artifactId>checkstyle-rules</artifactId>
                             <version>1.0.16</version>
                         </dependency>
+                        <dependency>
+                            <groupId>com.puppycrawl.tools</groupId>
+                            <artifactId>checkstyle</artifactId>
+                            <version>7.8.1</version>
+                        </dependency>
                     </dependencies>
                     <configuration>
                         <configLocation>com/github/ngeor/checkstyle.xml</configLocation>
