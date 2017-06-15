@@ -18,3 +18,10 @@ buildNumber.properties
 .idea/*
 !.idea/runConfigurations/
 
+#
+# Eclipse
+#
+.classpath
+.project
+.settings/
+

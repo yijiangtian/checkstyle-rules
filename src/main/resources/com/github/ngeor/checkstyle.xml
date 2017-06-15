@@ -238,4 +238,8 @@ This file is based on sun_checks.xml with customizations marked with ***
         </module>
     </module>
 
+    <module name="SuppressionFilter">
+        <property name="file" value="checkstyle/suppressions.xml"/>
+        <property name="optional" value="true"/>
+    </module>
 </module>
