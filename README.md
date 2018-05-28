@@ -25,7 +25,7 @@ You can configure the maven-checkstyle-plugin in this way:
                         <dependency>
                             <groupId>com.github.ngeor</groupId>
                             <artifactId>checkstyle-rules</artifactId>
-                            <version>1.1.0</version>
+                            <version>1.2.0</version>
                         </dependency>
                         <dependency>
                             <groupId>com.puppycrawl.tools</groupId>
@@ -142,7 +142,7 @@ Same as sun_checks:
 
 ### [LineLength](http://checkstyle.sourceforge.net/config_sizes.html#LineLength)
 
-This rule is relaxed from 80 to 150 characters.
+This rule is relaxed from 80 to 120 characters.
 
 ## [Whitespace](http://checkstyle.sourceforge.net/config_whitespace.html)
 
@@ -274,9 +274,6 @@ Checks that particular classes are never used as types in variable declarations,
 
 ### [ModifiedControlVariable](http://checkstyle.sourceforge.net/config_coding.html#ModifiedControlVariable)
 Check for ensuring that for loop control variables are not modified inside the for block.
-
-### [MultipleStringLiterals](http://checkstyle.sourceforge.net/config_coding.html#MultipleStringLiterals)
-Checks for multiple occurrences of the same string literal within a single file.
 
 ### [MultipleVariableDeclarations](http://checkstyle.sourceforge.net/config_coding.html#MultipleVariableDeclarations)
 Checks that each variable declaration is in its own statement and on its own line.
