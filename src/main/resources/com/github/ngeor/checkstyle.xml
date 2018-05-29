@@ -77,6 +77,14 @@ This file is based on sun_checks.xml with customizations marked with ***
         <property name="message" value="Line has trailing spaces."/>
     </module>
 
+    <module name="SuppressionFilter">
+        <property name="file" value="checkstyle/suppressions.xml"/>
+        <property name="optional" value="true"/>
+    </module>
+
+    <!-- Allow suppressing with an annotation -->
+    <module name="SuppressWarningsFilter" />
+
     <!-- Checks for Headers                                -->
     <!-- See http://checkstyle.sf.net/config_header.html   -->
     <!-- <module name="Header"> -->
@@ -239,10 +247,9 @@ This file is based on sun_checks.xml with customizations marked with ***
             <property name="allowNoEmptyLineBetweenFields" value="true"/>
             <property name="allowMultipleEmptyLines" value="false"/>
         </module>
+
+        <!-- make annotations available to SuppressWarningsFilter -->
+        <module name="SuppressWarningsHolder" />
     </module>
 
-    <module name="SuppressionFilter">
-        <property name="file" value="checkstyle/suppressions.xml"/>
-        <property name="optional" value="true"/>
-    </module>
 </module>

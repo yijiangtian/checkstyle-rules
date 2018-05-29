@@ -370,3 +370,5 @@ Example file to ignore magic numbers and multiple string literals in unit tests:
     <suppress files="Test.java$" checks="MultipleStringLiterals" />
 </suppressions>
 ```
+
+It is also possible to suppress violations using the `@SuppressWarnings` annotation.
