@@ -223,7 +223,6 @@ This file is based on sun_checks.xml with customizations marked with ***
         <module name="OverloadMethodsDeclarationOrder"/> <!-- *** added module -->
         <module name="PackageDeclaration"/> <!-- *** added module -->
         <module name="ParameterAssignment"/> <!-- *** added module -->
-        <module name="ReturnCount"/> <!-- *** added module -->
         <module name="StringLiteralEquality"/> <!-- *** added module -->
         <module name="UnnecessaryParentheses"/> <!-- *** added module -->
 

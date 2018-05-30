@@ -313,9 +313,6 @@ private void hello(String name) {
 }
 ```
 
-### [ReturnCount](http://checkstyle.sourceforge.net/config_coding.html#ReturnCount)
-Restricts the number of return statements in methods, constructors and lambda expressions (2 by default). Ignores specified methods (equals() by default).
-
 ### [StringLiteralEquality](http://checkstyle.sourceforge.net/config_coding.html#StringLiteralEquality)
 Checks that string literals are not used with == or !=.
 
