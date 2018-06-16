@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.6.0] - 2018-06-16
+
+- Allowing start imports for `org.springframework.test.web.servlet.result.MockMvcResultMatchers` package.
+
 ## [1.5.0] - 2018-06-11
 
 - Not requiring JavaDoc comment for more test related attributes: `BeforeClass`,

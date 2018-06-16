@@ -25,7 +25,7 @@ You can configure the maven-checkstyle-plugin in this way:
                         <dependency>
                             <groupId>com.github.ngeor</groupId>
                             <artifactId>checkstyle-rules</artifactId>
-                            <version>1.2.0</version>
+                            <version>1.6.0</version>
                         </dependency>
                         <dependency>
                             <groupId>com.puppycrawl.tools</groupId>
@@ -124,13 +124,14 @@ Same as sun_checks:
 
 Star import is allowed for:
 
-- java.awt
-- java.io
-- java.util
-- javax.swing
-- java.lang.Math
-- org.junit.Assert
-- org.mockito.Mockito
+- `java.awt`
+- `java.io`
+- `java.util`
+- `javax.swing`
+- `java.lang.Math`
+- `org.junit.Assert`
+- `org.mockito.Mockito`
+- `org.springframework.test.web.servlet.result.MockMvcResultMatchers`
 
 ## [Size Violations](http://checkstyle.sourceforge.net/config_sizes.html)
 
