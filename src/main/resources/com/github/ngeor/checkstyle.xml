@@ -98,7 +98,7 @@ This file is based on sun_checks.xml with customizations marked with ***
         <!-- See http://checkstyle.sf.net/config_javadoc.html -->
         <module name="JavadocMethod">
             <property name="allowedAnnotations"
-                      value="Override,Test,Before,BeforeClass,BeforeEach,BeforeAll,After,AfterClass,AfterEach,AfterAll,DisplayName"/> <!-- *** no comment needed for tests and override methods -->
+                      value="Override,Test,ParameterizedTest,Before,BeforeClass,BeforeEach,BeforeAll,After,AfterClass,AfterEach,AfterAll,DisplayName"/> <!-- *** no comment needed for tests and override methods -->
 
             <property name="scope" value="package"/> <!-- *** don't document private methods -->
             <property name="allowMissingParamTags" value="true"/>

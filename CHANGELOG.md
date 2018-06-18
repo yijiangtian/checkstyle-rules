@@ -4,10 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.8.0] - 2018-06-18
+
+- Not requiring comments for methods annotated with JUnit 5
+  test annotation `ParameterizedTest`
+
 ## [1.7.0] - 2018-06-16
 
 - Not requiring comments for methods annotated with JUnit 5
-  test attributes: `BeforeEach`, `BeforeAll`,
+  test annotations: `BeforeEach`, `BeforeAll`,
   `AfterEach`, `AfterAll`, `DisplayName`.
 
 ## [1.6.0] - 2018-06-16
@@ -16,7 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.5.0] - 2018-06-11
 
-- Not requiring JavaDoc comment for more test related attributes:
+- Not requiring JavaDoc comment for more test related annotations:
   `BeforeClass`, `AfterClass`, `After`.
 
 ## [1.4.1] - 2018-05-30
