@@ -158,8 +158,11 @@ Same as sun_checks:
 - [ParenPad](http://checkstyle.sourceforge.net/config_whitespace.html#ParenPad)
 - [TypecastParenPad](http://checkstyle.sourceforge.net/config_whitespace.html#TypecastParenPad)
 - [WhitespaceAfter](http://checkstyle.sourceforge.net/config_whitespace.html#WhitespaceAfter)
-- [WhitespaceAround](http://checkstyle.sourceforge.net/config_whitespace.html#WhitespaceAround)
 - [FileTabCharacter](http://checkstyle.sourceforge.net/config_whitespace.html#FileTabCharacter)
+
+### [WhitespaceAround](http://checkstyle.sourceforge.net/config_whitespace.html#WhitespaceAround)
+
+This rule is relaxed so that empty types, constructors and methods are allowed.
 
 ### [EmptyLineSeparator](http://checkstyle.sourceforge.net/config_whitespace.html#EmptyLineSeparator)
 
