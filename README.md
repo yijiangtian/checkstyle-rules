@@ -25,12 +25,12 @@ You can configure the maven-checkstyle-plugin in this way:
                         <dependency>
                             <groupId>com.github.ngeor</groupId>
                             <artifactId>checkstyle-rules</artifactId>
-                            <version>1.9.0</version>
+                            <version>2.0.0</version>
                         </dependency>
                         <dependency>
                             <groupId>com.puppycrawl.tools</groupId>
                             <artifactId>checkstyle</artifactId>
-                            <version>8.10.1</version>
+                            <version>8.12</version>
                         </dependency>
                     </dependencies>
                     <configuration>
@@ -132,6 +132,25 @@ Star import is allowed for:
 - `org.junit.Assert`
 - `org.mockito.Mockito`
 - `org.springframework.test.web.servlet.result.MockMvcResultMatchers`
+
+### [ImportOrder](http://checkstyle.sourceforge.net/config_imports.html#ImportOrder)
+
+Imports from packages `java.*`, `javax.*` and `org.*` need to be first. The rest
+of the imports need to follow in a second group, separated from the first group
+by a blank line. Static imports are the final group, sorted alphabetically, also
+separated by a blank line.
+
+Example:
+
+```
+import java.util.List;
+import org.springframework.beans.factory.annotation.Value;
+
+import com.clients.AuthClient;
+
+import static org.assertj.core.api.Assertions.assertThat;
+```
+
 
 ## [Size Violations](http://checkstyle.sourceforge.net/config_sizes.html)
 
