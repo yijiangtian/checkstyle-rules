@@ -2,8 +2,7 @@
 Rules for checkstyle. Share rules among projects.
 
 [![Build Status](https://travis-ci.org/ngeor/checkstyle-rules.svg?branch=master)](https://travis-ci.org/ngeor/checkstyle-rules)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.ngeor/checkstyle-rules/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.ngeor/checkstyle-rules)
-
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.ngeor/checkstyle-rules.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.github.ngeor%22%20AND%20a:%22checkstyle-rules%22)
 
 # Overview
 
@@ -13,53 +12,53 @@ The rules are based on the default Sun checks, with some modifications.
 
 You can configure the maven-checkstyle-plugin in this way:
 
-```
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>3.0.0</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>com.github.ngeor</groupId>
-                            <artifactId>checkstyle-rules</artifactId>
-                            <version>2.0.0</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>com.puppycrawl.tools</groupId>
-                            <artifactId>checkstyle</artifactId>
-                            <version>8.12</version>
-                        </dependency>
-                    </dependencies>
-                    <configuration>
-                        <configLocation>com/github/ngeor/checkstyle.xml</configLocation>
-                        <includeTestSourceDirectory>true</includeTestSourceDirectory>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+```xml
+<build>
+    <pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.0.0</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.github.ngeor</groupId>
+                        <artifactId>checkstyle-rules</artifactId>
+                        <version>2.0.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>8.14</version>
+                    </dependency>
+                </dependencies>
                 <configuration>
                     <configLocation>com/github/ngeor/checkstyle.xml</configLocation>
                     <includeTestSourceDirectory>true</includeTestSourceDirectory>
                 </configuration>
             </plugin>
         </plugins>
-    </reporting>
+    </pluginManagement>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+        </plugin>
+    </plugins>
+</build>
+
+<reporting>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <configuration>
+                <configLocation>com/github/ngeor/checkstyle.xml</configLocation>
+                <includeTestSourceDirectory>true</includeTestSourceDirectory>
+            </configuration>
+        </plugin>
+    </plugins>
+</reporting>
 ```
 
 # Rules in details
@@ -68,8 +67,10 @@ You can configure the maven-checkstyle-plugin in this way:
 
 Same as sun_checks:
 
-- [JavadocType](http://checkstyle.sourceforge.net/config_javadoc.html#JavadocType): Checks for Javadoc comments on types.
-- [JavadocStyle](http://checkstyle.sourceforge.net/config_javadoc.html#JavadocStyle): Checks the style of Javadoc comments.
+- [JavadocType](http://checkstyle.sourceforge.net/config_javadoc.html#JavadocType):
+  Checks for Javadoc comments on types.
+- [JavadocStyle](http://checkstyle.sourceforge.net/config_javadoc.html#JavadocStyle):
+  Checks the style of Javadoc comments.
 
 ### [JavadocPackage](http://checkstyle.sourceforge.net/config_javadoc.html#JavadocPackage)
 
@@ -105,8 +106,8 @@ Same as sun_checks:
 ### [MethodName](http://checkstyle.sourceforge.net/config_naming.html#MethodName)
 
 For this rule, the Google flavor of the rule is used, in order to allow
-underscores in method names. The intention is for underscores to be used
-in unit test method names, in the format of:
+underscores in method names. The intention is for underscores to be used in unit
+test method names, in the format of:
 
 ```
 methodUnderTest_conditions_result
@@ -260,29 +261,38 @@ This rule is disabled, so it is permitted to write `int max = (x > y) ? x : y;`
 
 ### [HiddenField](http://checkstyle.sourceforge.net/config_coding.html#HiddenField)
 
-This rule is relaxed to permit hiding local fields within constructors and setters.
+This rule is relaxed to permit hiding local fields within constructors and
+setters.
 
 ### [MagicNumber](http://checkstyle.sourceforge.net/config_coding.html#MagicNumber)
 
-The rule is relaxed, allowing magic numbers in field declarations, annotations and the hashCode method.
+The rule is relaxed, allowing magic numbers in field declarations, annotations
+and the hashCode method.
 
 ### [CovariantEquals](http://checkstyle.sourceforge.net/config_coding.html#CovariantEquals)
-Checks that classes which define a covariant equals() method also override method equals(Object).
+Checks that classes which define a covariant equals() method also override
+method equals(Object).
 
 ### [DeclarationOrder](http://checkstyle.sourceforge.net/config_coding.html#DeclarationOrder)
-Checks that class or interface members appear in the order of: static fields, fields, constructors, methods. For fields, access level is also taken into account: public, protected, package, private.
+Checks that class or interface members appear in the order of: static fields,
+fields, constructors, methods. For fields, access level is also taken into
+account: public, protected, package, private.
 
 ### [DefaultComesLast](http://checkstyle.sourceforge.net/config_coding.html#DefaultComesLast)
 Check that the default is after all the cases in a switch statement.
 
 ### [EqualsAvoidNull](http://checkstyle.sourceforge.net/config_coding.html#EqualsAvoidNull)
-Checks that any combination of String literals is on the left side of an equals() comparison.
+Checks that any combination of String literals is on the left side of an
+equals() comparison.
 
 ### [ExplicitInitialization](http://checkstyle.sourceforge.net/config_coding.html#ExplicitInitialization)
-Checks if any class or object member is explicitly initialized to default for its type value (null for object references, zero for numeric types and char and false for boolean.
+Checks if any class or object member is explicitly initialized to default for
+its type value (null for object references, zero for numeric types and char and
+false for boolean.
 
 ### [FallThrough](http://checkstyle.sourceforge.net/config_coding.html#FallThrough)
-Checks for fall-through in switch statements. Finds locations where a case contains Java code but lacks a break, return, throw or continue statement.
+Checks for fall-through in switch statements. Finds locations where a case
+contains Java code but lacks a break, return, throw or continue statement.
 
 ### [IllegalCatch](http://checkstyle.sourceforge.net/config_coding.html#IllegalCatch)
 Checks that certain exception types do not appear in a catch statement.
@@ -293,13 +303,16 @@ This check can be used to ensure that types are not declared to be thrown.
 ### [IllegalTokenText](http://checkstyle.sourceforge.net/config_coding.html#IllegalTokenText)
 
 ### [IllegalType](http://checkstyle.sourceforge.net/config_coding.html#IllegalType)
-Checks that particular classes are never used as types in variable declarations, return values or parameters.
+Checks that particular classes are never used as types in variable declarations,
+return values or parameters.
 
 ### [ModifiedControlVariable](http://checkstyle.sourceforge.net/config_coding.html#ModifiedControlVariable)
-Check for ensuring that for loop control variables are not modified inside the for block.
+Check for ensuring that for loop control variables are not modified inside the
+for block.
 
 ### [MultipleVariableDeclarations](http://checkstyle.sourceforge.net/config_coding.html#MultipleVariableDeclarations)
-Checks that each variable declaration is in its own statement and on its own line.
+Checks that each variable declaration is in its own statement and on its own
+line.
 
 ### [NestedForDepth](http://checkstyle.sourceforge.net/config_coding.html#NestedForDepth)
 Restricts nested for blocks to a specified depth (default = 1).
@@ -323,7 +336,8 @@ Checks that there is only one statement per line.
 Checks that overload methods are grouped together.
 
 ### [PackageDeclaration](http://checkstyle.sourceforge.net/config_coding.html#PackageDeclaration)
-Ensures that a class has a package declaration, and whether the package name matches the directory name for the source file.
+Ensures that a class has a package declaration, and whether the package name
+matches the directory name for the source file.
 
 ### [ParameterAssignment](http://checkstyle.sourceforge.net/config_coding.html#ParameterAssignment)
 Disallows assignment of parameters.
@@ -372,11 +386,14 @@ Same as sun_checks:
 This rule is disabled in favor of the rule *ParameterAssignment*.
 
 ### [CommentsIndentation](http://checkstyle.sourceforge.net/config_misc.html#CommentsIndentation)
-Controls the indentation between comments and surrounding code. Comments are indented at the same level as the surrounding code.
+Controls the indentation between comments and surrounding code. Comments are
+indented at the same level as the surrounding code.
 
 # Suppressions
 
-It is possible to specify an [XML file with supressions](http://checkstyle.sourceforge.net/config_filters.html#SuppressionFilter). The file is optional and it needs to be in `checkstyle/suppressions.xml`.
+It is possible to specify an [XML file with
+suppressions](http://checkstyle.sourceforge.net/config_filters.html#SuppressionFilter).
+The file is optional and it needs to be in `checkstyle/suppressions.xml`.
 
 Example file to ignore magic numbers and multiple string literals in unit tests:
 
@@ -391,4 +408,5 @@ Example file to ignore magic numbers and multiple string literals in unit tests:
 </suppressions>
 ```
 
-It is also possible to suppress violations using the `@SuppressWarnings` annotation.
+It is also possible to suppress violations using the `@SuppressWarnings`
+annotation.
