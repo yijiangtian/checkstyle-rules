@@ -24,12 +24,12 @@ You can configure the maven-checkstyle-plugin in this way:
                     <dependency>
                         <groupId>com.github.ngeor</groupId>
                         <artifactId>checkstyle-rules</artifactId>
-                        <version>2.0.0</version>
+                        <version>3.0.0</version>
                     </dependency>
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>8.14</version>
+                        <version>8.18</version>
                     </dependency>
                 </dependencies>
                 <configuration>
@@ -98,10 +98,15 @@ Same as sun_checks:
 - [LocalFinalVariableName](http://checkstyle.sourceforge.net/config_naming.html#LocalFinalVariableName)
 - [LocalVariableName](http://checkstyle.sourceforge.net/config_naming.html#LocalVariableName)
 - [MemberName](http://checkstyle.sourceforge.net/config_naming.html#MemberName)
-- [PackageName](http://checkstyle.sourceforge.net/config_naming.html#PackageName)
 - [ParameterName](http://checkstyle.sourceforge.net/config_naming.html#ParameterName)
 - [StaticVariableName](http://checkstyle.sourceforge.net/config_naming.html#StaticVariableName)
 - [TypeName](http://checkstyle.sourceforge.net/config_naming.html#TypeName)
+
+### [PackageName](http://checkstyle.sourceforge.net/config_naming.html#PackageName)
+
+Package names must start with lowercase letter and they can only contain lower case letters
+and numbers (no underscores).
+
 
 ### [MethodName](http://checkstyle.sourceforge.net/config_naming.html#MethodName)
 
@@ -299,8 +304,6 @@ Checks that certain exception types do not appear in a catch statement.
 
 ### [IllegalThrows](http://checkstyle.sourceforge.net/config_coding.html#IllegalThrows)
 This check can be used to ensure that types are not declared to be thrown.
-
-### [IllegalTokenText](http://checkstyle.sourceforge.net/config_coding.html#IllegalTokenText)
 
 ### [IllegalType](http://checkstyle.sourceforge.net/config_coding.html#IllegalType)
 Checks that particular classes are never used as types in variable declarations,
