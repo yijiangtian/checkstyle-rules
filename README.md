@@ -19,17 +19,17 @@ You can configure the maven-checkstyle-plugin in this way:
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.1.0</version>
                 <dependencies>
                     <dependency>
                         <groupId>com.github.ngeor</groupId>
                         <artifactId>checkstyle-rules</artifactId>
-                        <version>3.0.0</version>
+                        <version>3.1.0</version>
                     </dependency>
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>8.18</version>
+                        <version>8.22</version>
                     </dependency>
                 </dependencies>
                 <configuration>
