@@ -1,4 +1,5 @@
 # checkstyle-rules
+
 Rules for checkstyle. Share rules among projects.
 
 [![Build Status](https://travis-ci.org/ngeor/checkstyle-rules.svg?branch=master)](https://travis-ci.org/ngeor/checkstyle-rules)
@@ -24,12 +25,12 @@ You can configure the maven-checkstyle-plugin in this way:
                     <dependency>
                         <groupId>com.github.ngeor</groupId>
                         <artifactId>checkstyle-rules</artifactId>
-                        <version>3.1.0</version>
+                        <version>3.2.0</version>
                     </dependency>
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>8.22</version>
+                        <version>8.23</version>
                     </dependency>
                 </dependencies>
                 <configuration>
@@ -67,10 +68,10 @@ You can configure the maven-checkstyle-plugin in this way:
 
 Same as sun_checks:
 
-- [JavadocType](http://checkstyle.sourceforge.net/config_javadoc.html#JavadocType):
-  Checks for Javadoc comments on types.
-- [JavadocStyle](http://checkstyle.sourceforge.net/config_javadoc.html#JavadocStyle):
-  Checks the style of Javadoc comments.
+-   [JavadocType](http://checkstyle.sourceforge.net/config_javadoc.html#JavadocType):
+    Checks for Javadoc comments on types.
+-   [JavadocStyle](http://checkstyle.sourceforge.net/config_javadoc.html#JavadocStyle):
+    Checks the style of Javadoc comments.
 
 ### [JavadocPackage](http://checkstyle.sourceforge.net/config_javadoc.html#JavadocPackage)
 
@@ -80,33 +81,36 @@ This rule is disabled, so documentation is not needed for each package.
 
 This rule is relaxed:
 
-- no need to document private methods
-- no need to document property getters/setters
-- no need to document one-liners
-- no need to document overrides and test methods
-- no need to provide full information for parameters, throws and return types
+-   no need to document private methods
+-   no need to document property getters/setters
+-   no need to document one-liners
+-   no need to document overrides and test methods
+-   no need to provide full information for parameters, throws and return types
 
 ### [JavadocVariable](http://checkstyle.sourceforge.net/config_javadoc.html#JavadocVariable)
 
 This rule is relaxed: no need to document private fields.
 
+### [InvalidJavadocPosition](https://checkstyle.sourceforge.io/config_javadoc.html#InvalidJavadocPosition)
+
+This rule is enabled.
+
 ## [Naming conventions](http://checkstyle.sourceforge.net/config_naming.html)
 
 Same as sun_checks:
 
-- [ConstantName](http://checkstyle.sourceforge.net/config_naming.html#ConstantName)
-- [LocalFinalVariableName](http://checkstyle.sourceforge.net/config_naming.html#LocalFinalVariableName)
-- [LocalVariableName](http://checkstyle.sourceforge.net/config_naming.html#LocalVariableName)
-- [MemberName](http://checkstyle.sourceforge.net/config_naming.html#MemberName)
-- [ParameterName](http://checkstyle.sourceforge.net/config_naming.html#ParameterName)
-- [StaticVariableName](http://checkstyle.sourceforge.net/config_naming.html#StaticVariableName)
-- [TypeName](http://checkstyle.sourceforge.net/config_naming.html#TypeName)
+-   [ConstantName](http://checkstyle.sourceforge.net/config_naming.html#ConstantName)
+-   [LocalFinalVariableName](http://checkstyle.sourceforge.net/config_naming.html#LocalFinalVariableName)
+-   [LocalVariableName](http://checkstyle.sourceforge.net/config_naming.html#LocalVariableName)
+-   [MemberName](http://checkstyle.sourceforge.net/config_naming.html#MemberName)
+-   [ParameterName](http://checkstyle.sourceforge.net/config_naming.html#ParameterName)
+-   [StaticVariableName](http://checkstyle.sourceforge.net/config_naming.html#StaticVariableName)
+-   [TypeName](http://checkstyle.sourceforge.net/config_naming.html#TypeName)
 
 ### [PackageName](http://checkstyle.sourceforge.net/config_naming.html#PackageName)
 
 Package names must start with lowercase letter and they can only contain lower case letters
 and numbers (no underscores).
-
 
 ### [MethodName](http://checkstyle.sourceforge.net/config_naming.html#MethodName)
 
@@ -122,22 +126,22 @@ methodUnderTest_conditions_result
 
 Same as sun_checks:
 
-- [IllegalImport](http://checkstyle.sourceforge.net/config_imports.html#IllegalImport)
-- [RedundantImport](http://checkstyle.sourceforge.net/config_imports.html#RedundantImport)
-- [UnusedImports](http://checkstyle.sourceforge.net/config_imports.html#UnusedImports)
+-   [IllegalImport](http://checkstyle.sourceforge.net/config_imports.html#IllegalImport)
+-   [RedundantImport](http://checkstyle.sourceforge.net/config_imports.html#RedundantImport)
+-   [UnusedImports](http://checkstyle.sourceforge.net/config_imports.html#UnusedImports)
 
 ### [AvoidStarImport](http://checkstyle.sourceforge.net/config_imports.html#AvoidStarImport)
 
 Star import is allowed for:
 
-- `java.awt`
-- `java.io`
-- `java.util`
-- `javax.swing`
-- `java.lang.Math`
-- `org.junit.Assert`
-- `org.mockito.Mockito`
-- `org.springframework.test.web.servlet.result.MockMvcResultMatchers`
+-   `java.awt`
+-   `java.io`
+-   `java.util`
+-   `javax.swing`
+-   `java.lang.Math`
+-   `org.junit.Assert`
+-   `org.mockito.Mockito`
+-   `org.springframework.test.web.servlet.result.MockMvcResultMatchers`
 
 ### [ImportOrder](http://checkstyle.sourceforge.net/config_imports.html#ImportOrder)
 
@@ -157,14 +161,13 @@ import com.clients.AuthClient;
 import static org.assertj.core.api.Assertions.assertThat;
 ```
 
-
 ## [Size Violations](http://checkstyle.sourceforge.net/config_sizes.html)
 
 Same as sun_checks:
 
-- [FileLength](http://checkstyle.sourceforge.net/config_sizes.html#FileLength)
-- [MethodLength](http://checkstyle.sourceforge.net/config_sizes.html#MethodLength)
-- [ParameterNumber](http://checkstyle.sourceforge.net/config_sizes.html#ParameterNumber)
+-   [FileLength](http://checkstyle.sourceforge.net/config_sizes.html#FileLength)
+-   [MethodLength](http://checkstyle.sourceforge.net/config_sizes.html#MethodLength)
+-   [ParameterNumber](http://checkstyle.sourceforge.net/config_sizes.html#ParameterNumber)
 
 ### [LineLength](http://checkstyle.sourceforge.net/config_sizes.html#LineLength)
 
@@ -174,16 +177,16 @@ This rule is relaxed from 80 to 120 characters.
 
 Same as sun_checks:
 
-- [EmptyForIteratorPad](http://checkstyle.sourceforge.net/config_whitespace.html#EmptyForIteratorPad)
-- [GenericWhitespace](http://checkstyle.sourceforge.net/config_whitespace.html#GenericWhitespace)
-- [MethodParamPad](http://checkstyle.sourceforge.net/config_whitespace.html#MethodParamPad)
-- [NoWhitespaceAfter](http://checkstyle.sourceforge.net/config_whitespace.html#NoWhitespaceAfter)
-- [NoWhitespaceBefore](http://checkstyle.sourceforge.net/config_whitespace.html#NoWhitespaceBefore)
-- [OperatorWrap](http://checkstyle.sourceforge.net/config_whitespace.html#OperatorWrap)
-- [ParenPad](http://checkstyle.sourceforge.net/config_whitespace.html#ParenPad)
-- [TypecastParenPad](http://checkstyle.sourceforge.net/config_whitespace.html#TypecastParenPad)
-- [WhitespaceAfter](http://checkstyle.sourceforge.net/config_whitespace.html#WhitespaceAfter)
-- [FileTabCharacter](http://checkstyle.sourceforge.net/config_whitespace.html#FileTabCharacter)
+-   [EmptyForIteratorPad](http://checkstyle.sourceforge.net/config_whitespace.html#EmptyForIteratorPad)
+-   [GenericWhitespace](http://checkstyle.sourceforge.net/config_whitespace.html#GenericWhitespace)
+-   [MethodParamPad](http://checkstyle.sourceforge.net/config_whitespace.html#MethodParamPad)
+-   [NoWhitespaceAfter](http://checkstyle.sourceforge.net/config_whitespace.html#NoWhitespaceAfter)
+-   [NoWhitespaceBefore](http://checkstyle.sourceforge.net/config_whitespace.html#NoWhitespaceBefore)
+-   [OperatorWrap](http://checkstyle.sourceforge.net/config_whitespace.html#OperatorWrap)
+-   [ParenPad](http://checkstyle.sourceforge.net/config_whitespace.html#ParenPad)
+-   [TypecastParenPad](http://checkstyle.sourceforge.net/config_whitespace.html#TypecastParenPad)
+-   [WhitespaceAfter](http://checkstyle.sourceforge.net/config_whitespace.html#WhitespaceAfter)
+-   [FileTabCharacter](http://checkstyle.sourceforge.net/config_whitespace.html#FileTabCharacter)
 
 ### [WhitespaceAround](http://checkstyle.sourceforge.net/config_whitespace.html#WhitespaceAround)
 
@@ -193,8 +196,8 @@ This rule is relaxed so that empty types, constructors and methods are allowed.
 
 Requires empty lines between elements with these extra requirements:
 
-- no multiple empty lines are allowed
-- no empty lines are required between fields
+-   no multiple empty lines are allowed
+-   no empty lines are required between fields
 
 **Examples**
 
@@ -235,30 +238,30 @@ private String getAddress() {
 
 Same as sun_checks:
 
-- [ModifierOrder](http://checkstyle.sourceforge.net/config_modifier.html#ModifierOrder)
-- [RedundantModifier](http://checkstyle.sourceforge.net/config_modifier.html#RedundantModifier)
+-   [ModifierOrder](http://checkstyle.sourceforge.net/config_modifier.html#ModifierOrder)
+-   [RedundantModifier](http://checkstyle.sourceforge.net/config_modifier.html#RedundantModifier)
 
 ## [Blocks](http://checkstyle.sourceforge.net/config_blocks.html)
 
 Same as sun_checks:
 
-- [AvoidNestedBlocks](http://checkstyle.sourceforge.net/config_blocks.html#AvoidNestedBlocks)
-- [EmptyBlock](http://checkstyle.sourceforge.net/config_blocks.html#EmptyBlock)
-- [LeftCurly](http://checkstyle.sourceforge.net/config_blocks.html#LeftCurly)
-- [NeedBraces](http://checkstyle.sourceforge.net/config_blocks.html#NeedBraces)
-- [RightCurly](http://checkstyle.sourceforge.net/config_blocks.html#RightCurly)
+-   [AvoidNestedBlocks](http://checkstyle.sourceforge.net/config_blocks.html#AvoidNestedBlocks)
+-   [EmptyBlock](http://checkstyle.sourceforge.net/config_blocks.html#EmptyBlock)
+-   [LeftCurly](http://checkstyle.sourceforge.net/config_blocks.html#LeftCurly)
+-   [NeedBraces](http://checkstyle.sourceforge.net/config_blocks.html#NeedBraces)
+-   [RightCurly](http://checkstyle.sourceforge.net/config_blocks.html#RightCurly)
 
 ## [Coding](http://checkstyle.sourceforge.net/config_coding.html)
 
 Same as sun_checks:
 
-- [EmptyStatement](http://checkstyle.sourceforge.net/config_coding.html#EmptyStatement)
-- [EqualsHashCode](http://checkstyle.sourceforge.net/config_coding.html#EqualsHashCode)
-- [IllegalInstantiation](http://checkstyle.sourceforge.net/config_coding.html#IllegalInstantiation)
-- [InnerAssignment](http://checkstyle.sourceforge.net/config_coding.html#InnerAssignment)
-- [MissingSwitchDefault](http://checkstyle.sourceforge.net/config_coding.html#MissingSwitchDefault)
-- [SimplifyBooleanExpression](http://checkstyle.sourceforge.net/config_coding.html#SimplifyBooleanExpression)
-- [SimplifyBooleanReturn](http://checkstyle.sourceforge.net/config_coding.html#SimplifyBooleanReturn)
+-   [EmptyStatement](http://checkstyle.sourceforge.net/config_coding.html#EmptyStatement)
+-   [EqualsHashCode](http://checkstyle.sourceforge.net/config_coding.html#EqualsHashCode)
+-   [IllegalInstantiation](http://checkstyle.sourceforge.net/config_coding.html#IllegalInstantiation)
+-   [InnerAssignment](http://checkstyle.sourceforge.net/config_coding.html#InnerAssignment)
+-   [MissingSwitchDefault](http://checkstyle.sourceforge.net/config_coding.html#MissingSwitchDefault)
+-   [SimplifyBooleanExpression](http://checkstyle.sourceforge.net/config_coding.html#SimplifyBooleanExpression)
+-   [SimplifyBooleanReturn](http://checkstyle.sourceforge.net/config_coding.html#SimplifyBooleanReturn)
 
 ### [AvoidInlineConditionals](http://checkstyle.sourceforge.net/config_coding.html#AvoidInlineConditionals)
 
@@ -275,74 +278,94 @@ The rule is relaxed, allowing magic numbers in field declarations, annotations
 and the hashCode method.
 
 ### [CovariantEquals](http://checkstyle.sourceforge.net/config_coding.html#CovariantEquals)
+
 Checks that classes which define a covariant equals() method also override
 method equals(Object).
 
 ### [DeclarationOrder](http://checkstyle.sourceforge.net/config_coding.html#DeclarationOrder)
+
 Checks that class or interface members appear in the order of: static fields,
 fields, constructors, methods. For fields, access level is also taken into
 account: public, protected, package, private.
 
 ### [DefaultComesLast](http://checkstyle.sourceforge.net/config_coding.html#DefaultComesLast)
+
 Check that the default is after all the cases in a switch statement.
 
 ### [EqualsAvoidNull](http://checkstyle.sourceforge.net/config_coding.html#EqualsAvoidNull)
+
 Checks that any combination of String literals is on the left side of an
 equals() comparison.
 
 ### [ExplicitInitialization](http://checkstyle.sourceforge.net/config_coding.html#ExplicitInitialization)
+
 Checks if any class or object member is explicitly initialized to default for
 its type value (null for object references, zero for numeric types and char and
 false for boolean.
 
 ### [FallThrough](http://checkstyle.sourceforge.net/config_coding.html#FallThrough)
+
 Checks for fall-through in switch statements. Finds locations where a case
 contains Java code but lacks a break, return, throw or continue statement.
 
 ### [IllegalCatch](http://checkstyle.sourceforge.net/config_coding.html#IllegalCatch)
+
 Checks that certain exception types do not appear in a catch statement.
 
 ### [IllegalThrows](http://checkstyle.sourceforge.net/config_coding.html#IllegalThrows)
+
 This check can be used to ensure that types are not declared to be thrown.
 
 ### [IllegalType](http://checkstyle.sourceforge.net/config_coding.html#IllegalType)
+
 Checks that particular classes are never used as types in variable declarations,
 return values or parameters.
 
 ### [ModifiedControlVariable](http://checkstyle.sourceforge.net/config_coding.html#ModifiedControlVariable)
+
 Check for ensuring that for loop control variables are not modified inside the
 for block.
 
 ### [MultipleVariableDeclarations](http://checkstyle.sourceforge.net/config_coding.html#MultipleVariableDeclarations)
+
 Checks that each variable declaration is in its own statement and on its own
 line.
 
 ### [NestedForDepth](http://checkstyle.sourceforge.net/config_coding.html#NestedForDepth)
+
 Restricts nested for blocks to a specified depth (default = 1).
 
 ### [NestedIfDepth](http://checkstyle.sourceforge.net/config_coding.html#NestedIfDepth)
+
 Restricts nested if-else blocks to a specified depth (default = 1).
 
 ### [NestedTryDepth](http://checkstyle.sourceforge.net/config_coding.html#NestedTryDepth)
+
 Restricts nested try blocks to a specified depth (default = 1).
 
 ### [NoClone](http://checkstyle.sourceforge.net/config_coding.html#NoClone)
+
 Checks that the clone method is not overridden from the Object class.
 
 ### [NoFinalizer](http://checkstyle.sourceforge.net/config_coding.html#NoFinalizer)
+
 Verifies there are no finalize() methods defined in a class.
 
 ### [OneStatementPerLine](http://checkstyle.sourceforge.net/config_coding.html#OneStatementPerLine)
+
 Checks that there is only one statement per line.
 
 ### [OverloadMethodsDeclarationOrder](http://checkstyle.sourceforge.net/config_coding.html#OverloadMethodsDeclarationOrder)
+
 Checks that overload methods are grouped together.
 
 ### [PackageDeclaration](http://checkstyle.sourceforge.net/config_coding.html#PackageDeclaration)
+
 Ensures that a class has a package declaration, and whether the package name
 matches the directory name for the source file.
 
 ### [ParameterAssignment](http://checkstyle.sourceforge.net/config_coding.html#ParameterAssignment)
+
 Disallows assignment of parameters.
 
 **Example**
@@ -354,20 +377,21 @@ private void hello(String name) {
 ```
 
 ### [StringLiteralEquality](http://checkstyle.sourceforge.net/config_coding.html#StringLiteralEquality)
+
 Checks that string literals are not used with == or !=.
 
 ### [UnnecessaryParentheses](http://checkstyle.sourceforge.net/config_coding.html#UnnecessaryParentheses)
-Checks for the use of unnecessary parentheses.
 
+Checks for the use of unnecessary parentheses.
 
 ## [Class design](http://checkstyle.sourceforge.net/config_design.html)
 
 Same as sun_checks:
 
-- [FinalClass](http://checkstyle.sourceforge.net/config_design.html#FinalClass)
-- [HideUtilityClassConstructor](http://checkstyle.sourceforge.net/config_design.html#HideUtilityClassConstructor)
-- [InterfaceIsType](http://checkstyle.sourceforge.net/config_design.html#InterfaceIsType)
-- [VisibilityModifier](http://checkstyle.sourceforge.net/config_design.html#VisibilityModifier)
+-   [FinalClass](http://checkstyle.sourceforge.net/config_design.html#FinalClass)
+-   [HideUtilityClassConstructor](http://checkstyle.sourceforge.net/config_design.html#HideUtilityClassConstructor)
+-   [InterfaceIsType](http://checkstyle.sourceforge.net/config_design.html#InterfaceIsType)
+-   [VisibilityModifier](http://checkstyle.sourceforge.net/config_design.html#VisibilityModifier)
 
 ### [DesignForExtension](http://checkstyle.sourceforge.net/config_design.html#DesignForExtension)
 
@@ -377,18 +401,19 @@ This rule is disabled.
 
 Same as sun_checks:
 
-- [ArrayTypeStyle](http://checkstyle.sourceforge.net/config_misc.html#ArrayTypeStyle)
-- [TodoComment](http://checkstyle.sourceforge.net/config_misc.html#TodoComment)
-- [UpperEll](http://checkstyle.sourceforge.net/config_misc.html#UpperEll)
-- [NewlineAtEndOfFile](http://checkstyle.sf.net/config_misc.html#NewlineAtEndOfFile)
-- [Translation](http://checkstyle.sf.net/config_misc.html#Translation)
-- [RegexpSingleline](http://checkstyle.sf.net/config_misc.html)
+-   [ArrayTypeStyle](http://checkstyle.sourceforge.net/config_misc.html#ArrayTypeStyle)
+-   [TodoComment](http://checkstyle.sourceforge.net/config_misc.html#TodoComment)
+-   [UpperEll](http://checkstyle.sourceforge.net/config_misc.html#UpperEll)
+-   [NewlineAtEndOfFile](http://checkstyle.sf.net/config_misc.html#NewlineAtEndOfFile)
+-   [Translation](http://checkstyle.sf.net/config_misc.html#Translation)
+-   [RegexpSingleline](http://checkstyle.sf.net/config_misc.html)
 
 ### [FinalParameters](http://checkstyle.sourceforge.net/config_misc.html#FinalParameters)
 
-This rule is disabled in favor of the rule *ParameterAssignment*.
+This rule is disabled in favor of the rule _ParameterAssignment_.
 
 ### [CommentsIndentation](http://checkstyle.sourceforge.net/config_misc.html#CommentsIndentation)
+
 Controls the indentation between comments and surrounding code. Comments are
 indented at the same level as the surrounding code.
 
