@@ -102,11 +102,7 @@
       <property name="allowedAnnotations" value="Override,Test,ParameterizedTest,Before,BeforeClass,BeforeEach,BeforeAll,After,AfterClass,AfterEach,AfterAll,DisplayName" />
       <property name="scope" value="package" />
       <property name="allowMissingParamTags" value="true" />
-      <property name="allowMissingThrowsTags" value="true" />
       <property name="allowMissingReturnTag" value="true" />
-      <property name="minLineCount" value="2" />
-      <property name="allowThrowsTagsForSubclasses" value="true" />
-      <property name="allowMissingPropertyJavadoc" value="true" />
     </module>
     <module name="JavadocStyle" />
     <module name="JavadocType" />
