@@ -89,9 +89,7 @@
     </module>
     <module name="IllegalImport" />
     <module name="ImportOrder">
-      <property name="groups" value="/^(java|javax|org)\./" />
       <property name="ordered" value="true" />
-      <property name="separated" value="true" />
       <property name="option" value="bottom" />
       <property name="sortStaticImportsAlphabetically" value="true" />
     </module>
@@ -122,6 +120,7 @@
     <!-- Miscellaneous -->
     <module name="ArrayTypeStyle" />
     <module name="CommentsIndentation" />
+    <module name="Indentation" />
     <module name="OuterTypeFilename" />
     <module name="UpperEll" />
     <!-- Modifiers -->

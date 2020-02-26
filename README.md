@@ -25,7 +25,7 @@ You can configure the maven-checkstyle-plugin in this way:
                     <dependency>
                         <groupId>com.github.ngeor</groupId>
                         <artifactId>checkstyle-rules</artifactId>
-                        <version>3.5.0</version>
+                        <version>4.0.0</version>
                     </dependency>
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
@@ -197,8 +197,8 @@ Allowing packages:
 
 #### ImportOrder
 
-- `java`, `javax` and `org` packages come first (first group)
-- the rest are separated
+- All imports in one group, alphabetically sorted
+- Then, all static imports separately, alphabetically sorted
 
 ### [Javadoc Comments](https://checkstyle.sourceforge.io/config_javadoc.html)
 
@@ -256,7 +256,7 @@ Allowing packages:
 | CommentsIndentation           | _Enabled_  |
 | DescendantToken               | Not Used   |
 | FinalParameters               | _Disabled_ |
-| Indentation                   | Not Used   |
+| Indentation                   | _Enabled_  |
 | NewlineAtEndOfFile            | Used       |
 | OrderedProperties             | Not Used   |
 | OuterTypeFilename             | _Enabled_  |
