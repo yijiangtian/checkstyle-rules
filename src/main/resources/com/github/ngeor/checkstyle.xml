@@ -89,9 +89,9 @@
     </module>
     <module name="IllegalImport" />
     <module name="ImportOrder">
-      <property name="ordered" value="true" />
       <property name="option" value="bottom" />
       <property name="sortStaticImportsAlphabetically" value="true" />
+      <property name="separatedStaticGroups" value="true" />
     </module>
     <module name="RedundantImport" />
     <module name="UnusedImports" />

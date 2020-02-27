@@ -1,10 +1,9 @@
 package com.github.ngeor.checkstyle.rules;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.puppycrawl.tools.checkstyle.api.AuditEvent;
 import com.puppycrawl.tools.checkstyle.api.AuditListener;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Collects errors.

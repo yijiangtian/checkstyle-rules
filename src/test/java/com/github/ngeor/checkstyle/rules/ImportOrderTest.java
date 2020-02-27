@@ -3,7 +3,7 @@ package com.github.ngeor.checkstyle.rules;
 import com.puppycrawl.tools.checkstyle.Checker;
 import com.puppycrawl.tools.checkstyle.api.AuditEvent;
 import com.puppycrawl.tools.checkstyle.api.CheckstyleException;
-import com.puppycrawl.tools.checkstyle.api.SeverityLevel;
+import java.util.List;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,10 +11,10 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Tests the LineLength check.
+ * Tests the ImportOrder check.
  */
 @SuppressWarnings("checkstyle:MagicNumber")
-class LineLengthTest {
+class ImportOrderTest {
     private EventCollector eventCollector;
     private Checker checker;
 
@@ -31,17 +31,12 @@ class LineLengthTest {
 
     @Test
     void success() throws CheckstyleException {
-        final String file = "LineLengthTooLong.java";
-        final int errorCount = Utils.process(checker, file);
-        assertThat(errorCount).isEqualTo(1);
-        assertThat(eventCollector.getAuditEvents()).hasSize(1);
-        AuditEvent auditEvent = eventCollector.getAuditEvents().get(0);
-        assertThat(auditEvent.getLine()).isEqualTo(9);
-        assertThat(auditEvent.getColumn()).isEqualTo(0);
-        assertThat(auditEvent.getSeverityLevel()).isEqualTo(SeverityLevel.ERROR);
-        assertThat(auditEvent.getSourceName()).isEqualTo(
-            "com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"
+        final String file = "ImportOrder1.java";
+        Utils.process(checker, file);
+        List<AuditEvent> auditEvents = eventCollector.getAuditEvents();
+        auditEvents.removeIf(
+            a -> "com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck".equals(a.getSourceName())
         );
-        assertThat(auditEvent.getFileName()).isEqualTo(Utils.expectedFileName(file));
+        assertThat(auditEvents).as("filtered audit events").hasSize(0);
     }
 }

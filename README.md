@@ -15,51 +15,37 @@ You can configure the maven-checkstyle-plugin in this way:
 
 ```xml
 <build>
-    <pluginManagement>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.1.0</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.github.ngeor</groupId>
-                        <artifactId>checkstyle-rules</artifactId>
-                        <version>4.0.0</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>com.puppycrawl.tools</groupId>
-                        <artifactId>checkstyle</artifactId>
-                        <version>8.29</version>
-                    </dependency>
-                </dependencies>
-                <configuration>
-                    <configLocation>com/github/ngeor/checkstyle.xml</configLocation>
-                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
-                </configuration>
-            </plugin>
-        </plugins>
-    </pluginManagement>
-    <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-checkstyle-plugin</artifactId>
-        </plugin>
-    </plugins>
+  <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-checkstyle-plugin</artifactId>
+    <version>3.1.0</version>
+    <executions>
+      <execution>
+        <id>validate</id>
+        <phase>validate</phase>
+        <goals>
+          <goal>check</goal>
+        </goals>
+      </execution>
+    </executions>
+    <dependencies>
+      <dependency>
+        <groupId>com.puppycrawl.tools</groupId>
+        <artifactId>checkstyle</artifactId>
+        <version>8.29</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.ngeor</groupId>
+        <artifactId>checkstyle-rules</artifactId>
+        <version>4.0.0</version>
+      </dependency>
+    </dependencies>
+    <configuration>
+      <configLocation>com/github/ngeor/checkstyle.xml</configLocation>
+      <includeTestSourceDirectory>true</includeTestSourceDirectory>
+    </configuration>
+  </plugin>
 </build>
-
-<reporting>
-    <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-checkstyle-plugin</artifactId>
-            <configuration>
-                <configLocation>com/github/ngeor/checkstyle.xml</configLocation>
-                <includeTestSourceDirectory>true</includeTestSourceDirectory>
-            </configuration>
-        </plugin>
-    </plugins>
-</reporting>
 ```
 
 ## Rules in details
@@ -197,8 +183,9 @@ Allowing packages:
 
 #### ImportOrder
 
-- All imports in one group, alphabetically sorted
-- Then, all static imports separately, alphabetically sorted
+- All non-static imports in one group, alphabetically sorted
+- One line separator
+- All static imports in one group, alphabetically sorted
 
 ### [Javadoc Comments](https://checkstyle.sourceforge.io/config_javadoc.html)
 
